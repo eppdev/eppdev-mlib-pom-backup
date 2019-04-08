@@ -15,6 +15,15 @@ EPPDEV-MLIB是一个针对机器学习的实时计算Java工具集，主要实�
 * 实时接口方式：提供Rest API接口供外部进行调用
 * 批量计算方式：提供控制台命令实现批量输入输出完成接口调用
 
+## 代码组织介个
+
+* eppdev-mlib-commons：基础工具类，目前主要包括需要预测的对象的预处理工作，处理成为Map<String, PropertyData>对象
+* eppdev-mlib-reg-pom：回归类算法相关内容
+  * eppdev-mlib-reg-logistic-pom: 逻辑回归算法相关
+    * eppdev-mlib-reg-logistic-core：逻辑回归计算的核心内容
+    * eppdev-mlib-reg-logistic-db-basic：逻辑回归模型固化的数据库基础配置
+    * eppdev-mlib-reg-logistic-db-rest：逻辑回归模型固化基于数据库配置的restapi计算接口
+
 
 ## 许可
 
