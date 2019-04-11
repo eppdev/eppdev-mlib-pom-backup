@@ -1,0 +1,166 @@
+<!--
+     _eppdev_mlib_dummy_var_coef对应的基础Mapper文件，请勿修改，代码生成时会自动进行覆盖
+     由EPPDEV-JEE自动创建
+-->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.eppdev.mlib.reg.logistic.coef.dao.auto._EppdevMlibDummyVarCoefDao">
+    <sql id="columns">
+        a.id as id,
+        a.model_id as modelId,
+        a.var_name as varName,
+        a.coef as coef,
+        a.create_date as createDate,
+        a.update_date as updateDate,
+        a.create_by as createBy,
+        a.update_by as updateBy,
+        a.remarks as remarks,
+        a.del_flag as delFlag,
+    </sql>
+
+    <insert id="insert" parameterType="cn.eppdev.mlib.reg.logistic.coef.entity.EppdevMlibDummyVarCoef">
+        insert into _eppdev_mlib_dummy_var_coef(
+        <trim suffixOverrides=",">
+            id,
+            model_id,
+            var_name,
+            coef,
+            create_date,
+            update_date,
+            create_by,
+            update_by,
+            remarks,
+            del_flag,
+        </trim>
+        )
+        values(
+        <trim suffixOverrides=",">
+            #{id},
+            #{modelId},
+            #{varName},
+            #{coef},
+            #{createDate},
+            #{updateDate},
+            #{createBy},
+            #{updateBy},
+            #{remarks},
+            #{delFlag},
+        </trim>
+        )
+    </insert>
+
+    <delete id="delete">
+        update _eppdev_mlib_dummy_var_coef a
+        <set>
+            a.del_flag=1,
+            <if test="updateDate != null">a.update_date=#{updateDate}, </if>
+            <if test="updateBy != null and updateBy != ''">a.update_by = #{updateBy}, </if>
+        </set>
+        <where>
+            and a.id=#{id}
+                and a.del_flag = 0
+        </where>
+    </delete>
+
+    <delete id="deleteBy" parameterType="cn.eppdev.mlib.reg.logistic.coef.param.EppdevMlibDummyVarCoefParam">
+        update _eppdev_mlib_dummy_var_coef a
+        <set>
+            a.del_flag=1,
+            <if test="updateDate != null">a.update_date=#{updateDate}, </if>
+            <if test="updateBy != null and updateBy != ''">a.update_by = #{updateBy}, </if>
+        </set>
+        <where>
+            <if test="id != null and id != ''">and a.id=#{id}</if>
+            <if test="_inIdList != null and _inIdList.length > 0">
+                and a.id in
+                <foreach collection="_inIdList" item="_item" separator="," open="(" close=")">
+                    #{_item}
+                </foreach>
+            </if>
+            <if test="modelId != null and modelId != ''">and a.model_id=#{modelId}</if>
+            <if test="createBy != null and createBy != ''">and a.create_by=#{createBy}</if>
+            <if test="updateBy != null and updateBy != ''">and a.update_by=#{updateBy}</if>
+            <if test="delFlag != null">and a.del_flag=#{delFlag}</if>
+                and a.del_flag = 0
+        </where>
+    </delete>
+
+    <update id="update" parameterType="cn.eppdev.mlib.reg.logistic.coef.entity.EppdevMlibDummyVarCoef">
+        update _eppdev_mlib_dummy_var_coef a
+        <set>
+            <if test="id != null and id != ''">a.id = #{id},</if>
+            <if test="modelId != null and modelId != ''">a.model_id = #{modelId},</if>
+            <if test="varName != null and varName != ''">a.var_name = #{varName},</if>
+            <if test="coef != null">a.coef = #{coef},</if>
+            <if test="createDate != null">a.create_date = #{createDate},</if>
+            <if test="updateDate != null">a.update_date = #{updateDate},</if>
+            <if test="createBy != null and createBy != ''">a.create_by = #{createBy},</if>
+            <if test="updateBy != null and updateBy != ''">a.update_by = #{updateBy},</if>
+            <if test="remarks != null and remarks != ''">a.remarks = #{remarks},</if>
+            <if test="delFlag != null">a.del_flag = #{delFlag},</if>
+        </set>
+        <where>
+        and a.id=#{id}
+        </where>
+    </update>
+
+
+    <select id="get" resultType="cn.eppdev.mlib.reg.logistic.coef.entity.EppdevMlibDummyVarCoef">
+        select
+        <trim suffixOverrides=",">
+            <include refid="columns"/>
+            <include refid="cn.eppdev.mlib.reg.logistic.coef.dao.EppdevMlibDummyVarCoefDao.customRefColumns"/>
+        </trim>
+        from _eppdev_mlib_dummy_var_coef a
+        <include refid="cn.eppdev.mlib.reg.logistic.coef.dao.EppdevMlibDummyVarCoefDao.customRefJoin"/>
+        <where>
+            and a.id=#{id}
+        </where>
+    </select>
+
+
+    <select id="list" resultType="cn.eppdev.mlib.reg.logistic.coef.entity.EppdevMlibDummyVarCoef">
+        select
+        <trim suffixOverrides=",">
+            <include refid="columns"/>
+            <include refid="cn.eppdev.mlib.reg.logistic.coef.dao.EppdevMlibDummyVarCoefDao.customRefColumns"/>
+        </trim>
+        from _eppdev_mlib_dummy_var_coef a
+        <include refid="cn.eppdev.mlib.reg.logistic.coef.dao.EppdevMlibDummyVarCoefDao.customRefJoin"/>
+        <where>
+            <if test="id != null and id != ''">and a.id=#{id}</if>
+            <if test="_inIdList != null and _inIdList.length > 0">
+                and a.id in
+                <foreach collection="_inIdList" item="_item" separator="," open="(" close=")">
+                    #{_item}
+                </foreach>
+            </if>
+            <if test="modelId != null and modelId != ''">and a.model_id=#{modelId}</if>
+            <if test="varName != null and varName != ''">and a.var_name=#{varName}</if>
+            <if test="createBy != null and createBy != ''">and a.create_by=#{createBy}</if>
+            <if test="updateBy != null and updateBy != ''">and a.update_by=#{updateBy}</if>
+            <if test="delFlag != null">and a.del_flag=#{delFlag}</if>
+                and a.del_flag = 0
+            <if test="_customWhere != null and _customWhere != ''">${_customWhere}</if>
+        </where>
+        <choose>
+            <when test="_orderBy != null and _orderBy != ''">
+                order by ${_orderBy}
+            </when>
+            <otherwise>
+                order by a.update_date desc
+            </otherwise>
+        </choose>
+    </select>
+
+
+
+    <delete id="realDelete">
+        delete from _eppdev_mlib_dummy_var_coef a
+        <where>
+            and a.id=#{id}
+        </where>
+    </delete>
+
+</mapper>

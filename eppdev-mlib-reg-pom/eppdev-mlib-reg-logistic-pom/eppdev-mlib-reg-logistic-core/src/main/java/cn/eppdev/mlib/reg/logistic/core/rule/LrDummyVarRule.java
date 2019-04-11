@@ -23,5 +23,5 @@ public interface LrDummyVarRule {
      * 哑变量名称
      * @return 哑变量名称
      */
-    String getVarName();
+    String getDummyVarName();
 }
