@@ -13,19 +13,27 @@
         <module>eppdev-mlib-commons</module>
     </modules>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+    </parent>
+
     <properties>
-        <springboot.version>1.5.7.RELEASE</springboot.version>
-        <springcloud.version>Edgware.SR3</springcloud.version>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jackson.version>2.8.10</jackson.version>
+        <jackson.version>2.9.8</jackson.version>
         <commons-codec.version>1.10</commons-codec.version>
         <commons-beanutils.version>1.9.1</commons-beanutils.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
+        <pagehelper-spring-boot-starter.version>1.2.9</pagehelper-spring-boot-starter.version>
         <slf4j.version>1.7.25</slf4j.version>
         <junit.version>4.11</junit.version>
+        <mysql-connection.version>5.1.46</mysql-connection.version>
+        <druid.version>1.1.12</druid.version>
+        <ojdbc.version>10.2.0.4.0</ojdbc.version>
     </properties>
 
     <dependencyManagement>
@@ -49,14 +57,6 @@
             </dependency>
 
 
-            <!-- apache commons -->
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>1.9.3</version>
-            </dependency>
-            <!-- end of commons -->
-
             <!-- version fo jackson -->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -74,6 +74,48 @@
                 <version>${jackson.version}</version>
             </dependency>
             <!-- end of jackson -->
+
+
+            <!-- for apache commons -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${commons-beanutils.version}</version>
+            </dependency>
+            <!--  end for apache commons -->
+
+            <!-- for database -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connection.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc14</artifactId>
+                <version>${ojdbc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- end of database -->
 
 
         </dependencies>

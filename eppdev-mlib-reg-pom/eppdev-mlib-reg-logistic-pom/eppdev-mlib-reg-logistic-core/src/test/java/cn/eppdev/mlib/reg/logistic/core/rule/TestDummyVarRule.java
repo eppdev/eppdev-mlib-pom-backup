@@ -30,7 +30,7 @@ public class TestDummyVarRule implements LrDummyVarRule {
     }
 
     @Override
-    public String getVarName() {
+    public String getDummyVarName() {
         return varName;
     }
 }

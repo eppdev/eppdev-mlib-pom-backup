@@ -47,5 +47,5 @@ public interface LrResultDivideRule {
      * 分段结果值
      * @return 分段结果值
      */
-    int getScore();
+    Integer getScore();
 }

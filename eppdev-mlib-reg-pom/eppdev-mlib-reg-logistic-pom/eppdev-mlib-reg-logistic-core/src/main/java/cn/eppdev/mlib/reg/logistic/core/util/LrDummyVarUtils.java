@@ -30,7 +30,7 @@ public class LrDummyVarUtils {
         Set<String> resultSet = new HashSet<>();
         for (LrDummyVarRule dummyVarRule : varRuleList) {
             if (checkRules(propertyDataMap, dummyVarRule.getPropertyRuleList())) {
-                resultSet.add(dummyVarRule.getVarName());
+                resultSet.add(dummyVarRule.getDummyVarName());
             }
         }
         resultSet.add(INTERCEPTOR);
